@@ -13,6 +13,7 @@ def yolo_training():
         result = model.train(data="dataset.yaml", epochs=100, imgsz=640, device=0, save=True)
     else:
         result = model.train(data="dataset.yaml", epochs=100, imgsz=640, device='cpu', save=True)
+    export = result.export(format='onnx')
 
 
 if __name__ == '__main__':
